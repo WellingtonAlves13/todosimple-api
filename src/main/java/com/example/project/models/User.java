@@ -13,6 +13,12 @@ import java.util.Objects;
 @Entity
 @Table(name = "User.TABLE_NAME")
 public class User {
+
+    //EXCLUIR DPS CORRECAO DE ERRO PRIMARIA
+    public String getPassword() {
+        return null;
+    }
+
     public interface CreateUser {
 
     }
