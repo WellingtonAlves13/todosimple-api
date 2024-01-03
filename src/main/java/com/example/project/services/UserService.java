@@ -1,6 +1,7 @@
 package com.example.project.services;
 
 
+import com.example.project.models.Task;
 import com.example.project.models.User;
 import com.example.project.repositories.TaskRepository;
 import com.example.project.repositories.UserRepository;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,6 +24,7 @@ public class UserService {
                 "Usuario Não encontrado! Id: " + id + ", Tipo: " + User.class.getName()
         ));
     }
+
 
     @Transactional
     public User create(User obj){
