@@ -1,6 +1,5 @@
 package com.example.project.controllers;
 
-import com.example.project.models.Task;
 import com.example.project.models.User;
 import com.example.project.repositories.UserRepository;
 import com.example.project.services.UserService;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -46,7 +44,7 @@ public class UserController {
     @Validated(User.UpdateUser.class)
     public ResponseEntity<Void> update(@Valid @RequestBody User obj, @PathVariable Long id){
         obj.setId(id);
-        obj = this.userService.update(obj);
+        this.userService.update(obj);
         return ResponseEntity.noContent().build();
     }
 
@@ -56,5 +54,9 @@ public class UserController {
         return ResponseEntity.noContent().build();
 
     }
+
+
+
+
 
 }
