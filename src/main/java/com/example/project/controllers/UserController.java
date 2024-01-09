@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
@@ -29,7 +29,6 @@ public class UserController {
         return ResponseEntity.ok().body(obj);
 
     }
-
 
     @PostMapping
     @Validated(User.CreateUser.class)
